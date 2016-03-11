@@ -43,6 +43,9 @@ ifneq ($(HOST_OS),darwin)
     SDCLANG_LTO_DEFS := device/qcom/common/sdllvm-lto-defs.mk
 endif
 
+# EAS
+ENABLE_SCHEDBOOST := true
+
 # Custom ROM Toolchains
 #TARGET_ROM_CUSTOM_TOOLCHAIN_ARM := arm-linux-androideabi-uber-5.x
 TARGET_ROM_CUSTOM_TOOLCHAIN_AARCH64 := aarch64-linux-android-uber-5.x
