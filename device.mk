@@ -172,6 +172,10 @@ PRODUCT_PACKAGES += \
     liboverlay \
     libtinyxml
 
+# Doze mode
+PRODUCT_PACKAGES += \
+    OneplusDoze
+
 # Display calibration
 PRODUCT_PACKAGES += \
     FOSSConfig.xml \
