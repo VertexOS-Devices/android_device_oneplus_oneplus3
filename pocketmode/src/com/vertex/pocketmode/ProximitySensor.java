@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015 The CyanogenMod Project
+ * Copyright (c) 2016 The CyanogenMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.cyanogenmod.settings.doze;
+package com.vertex.pocketmode;
 
 import android.content.Context;
 import android.hardware.Sensor;
@@ -23,19 +23,18 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.util.Log;
 
+import com.vertex.pocketmode.util.FileUtils;
+
 public class ProximitySensor implements SensorEventListener {
 
     private static final boolean DEBUG = false;
-    private static final String TAG = "ProximitySensor";
+    private static final String TAG = "PocketModeProximity";
 
-    private static final int POCKET_DELTA_NS = 1000 * 1000 * 1000;
+    private static final String FPC_FILE = "/sys/devices/soc/soc:fpc_fpc1020/proximity_state";
 
     private SensorManager mSensorManager;
     private Sensor mSensor;
     private Context mContext;
-
-    private boolean mSawNear = false;
-    private long mInPocketTime = 0;
 
     public ProximitySensor(Context context) {
         mContext = context;
@@ -47,30 +46,9 @@ public class ProximitySensor implements SensorEventListener {
     @Override
     public void onSensorChanged(SensorEvent event) {
         boolean isNear = event.values[0] < mSensor.getMaximumRange();
-        if (mSawNear && !isNear) {
-            if (shouldPulse(event.timestamp)) {
-                Utils.launchDozePulse(mContext);
-            }
-        } else {
-            mInPocketTime = event.timestamp;
+        if (FileUtils.isFileWritable(FPC_FILE)) {
+            FileUtils.writeLine(FPC_FILE, isNear ? "1" : "0");
         }
-        mSawNear = isNear;
-    }
-
-    private boolean shouldPulse(long timestamp) {
-        long delta = timestamp - mInPocketTime;
-
-        if (Utils.handwaveGestureEnabled(mContext)
-                    && Utils.pocketGestureEnabled(mContext)) {
-            return true;
-        } else if (Utils.handwaveGestureEnabled(mContext)
-                    && !Utils.pocketGestureEnabled(mContext)) {
-            return delta < POCKET_DELTA_NS;
-        } else if (!Utils.handwaveGestureEnabled(mContext)
-                    && Utils.pocketGestureEnabled(mContext)) {
-            return delta >= POCKET_DELTA_NS;
-        }
-        return false;
     }
 
     @Override
