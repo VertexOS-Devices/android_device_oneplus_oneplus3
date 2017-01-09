@@ -1082,6 +1082,3 @@ on property:vold.decrypt=trigger_restart_min_framework
 
 on property:vold.decrypt=trigger_restart_framework
     restart time_daemon
-
-on property:init.svc.bootanim=stopped
-    write /sys/class/graphics/fb0/srgb 1
