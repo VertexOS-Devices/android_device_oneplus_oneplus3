@@ -52,4 +52,9 @@
          policy/src/com/android/internal/policy/impl/PhoneWindowManager.java
     -->
     <integer name="config_longPressOnHardwareHomeBehavior">3</integer>
+
+    <!-- Extended Boosts for QPerformance -->
+
+    <!-- Whether cpu boost is enabled right after boot -->
+    <bool name="config_enableCpuBoostOnBoot">true</bool>
 </resources>
