@@ -35,6 +35,12 @@ BOARD_VENDOR := oneplus
 # Use Snapdragon LLVM, if available
 TARGET_USE_SDCLANG := true
 
+ifneq ($(HOST_OS),darwin)
+    SDCLANG := true
+    SDCLANG_PATH := prebuilts/clang/linux-x86/host/sdclang-3.8/bin
+    SDCLANG_LTO_DEFS := device/qcom/common/sdllvm-lto-defs.mk
+endif
+
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := msm8996
 TARGET_NO_BOOTLOADER := true
