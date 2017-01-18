@@ -136,6 +136,15 @@ BOARD_USES_QCNE := true
 # Crypto
 TARGET_HW_DISK_ENCRYPTION := true
 
+# Custom ROM Toolchains
+#TARGET_ROM_CUSTOM_TOOLCHAIN_ARM := arm-linux-androideabi-uber-5.x
+#TARGET_ROM_CUSTOM_TOOLCHAIN_AARCH64 := aarch64-linux-android-uber-5.x
+
+# Custom Kernel Toolchains
+TARGET_KERNEL_CUSTOM_TOOLCHAIN := aarch64-linux-gnu-6.x-kernel-linaro
+KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/aarch64/$(TARGET_KERNEL_CUSTOM_TOOLCHAIN)/bin
+KERNEL_TOOLCHAIN_PREFIX := aarch64-linux-gnu-
+
 # Display
 BOARD_USES_ADRENO := true
 TARGET_CONTINUOUS_SPLASH_ENABLED := true
