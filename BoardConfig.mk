@@ -42,7 +42,7 @@ ifneq ($(HOST_OS),darwin)
 endif
 
 # Custom ROM Toolchains
-TARGET_ROM_CUSTOM_TOOLCHAIN_ARM := arm-linux-androideabi-uber-5.x
+#TARGET_ROM_CUSTOM_TOOLCHAIN_ARM := arm-linux-androideabi-uber-5.x
 TARGET_ROM_CUSTOM_TOOLCHAIN_AARCH64 := aarch64-linux-android-uber-5.x
 
 # Custom Kernel Toolchains
