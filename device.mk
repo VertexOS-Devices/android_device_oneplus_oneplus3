@@ -151,7 +151,6 @@ PRODUCT_COPY_FILES += \
 # Camera
 PRODUCT_PACKAGES += \
 	OnePlusCamera \
-	SnapdragonCamera \
 	SnapdragonGallery \
     libcamera_shim
 
