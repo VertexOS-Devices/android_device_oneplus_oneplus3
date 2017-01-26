@@ -40,6 +40,8 @@ camera.hal1.packagelist=com.skype.raider,com.whatsapp,com.tencent.mm,com.oneplus
 ro.media.enc.jpeg.quality=95
 
 # Google DNS
+net.rmnet0.dns1=8.8.8.8
+net.rmnet0.dns2=8.8.4.4
 net.dns1=8.8.8.8
 net.dns2=8.8.4.4
 
