@@ -148,6 +148,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     external/ant-wireless/antradio-library/com.dsi.ant.antradio_library.xml:system/etc/permissions/com.dsi.ant.antradio_library.xml
 
+# Bootanimation by @niwia
+PRODUCT_COPY_FILES += \
+	device/oneplus/oneplus3/extras/bootanimation/bootanimation.zip:system/media/bootanimation.zip	
+
 # Camera
 PRODUCT_PACKAGES += \
 	OnePlusCamera \
