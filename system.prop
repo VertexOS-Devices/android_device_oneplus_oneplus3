@@ -1,5 +1,3 @@
-ro.display.series=OnePlus 3
-
 # ADB
 persist.service.adb.enable=1                                                    
 persist.service.debuggable=1
