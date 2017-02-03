@@ -48,10 +48,6 @@ net.rmnet0.dns2=8.8.4.4
 net.dns1=8.8.8.8
 net.dns2=8.8.4.4
 
-# HAX - remove ASAP
-media.stagefright.legacyencoder=true
-media.stagefright.less-secure=true
-
 # Display power reduction (FOSS)
 ro.qcom.dpps.sensortype=3
 ro.qualcomm.display.paneltype=1
