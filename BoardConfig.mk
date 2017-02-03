@@ -45,6 +45,7 @@ endif
 
 # EAS
 ENABLE_SCHEDBOOST := true
+USE_SCHEDBOOST := true
 
 # Custom ROM Toolchains
 #TARGET_ROM_CUSTOM_TOOLCHAIN_ARM := arm-linux-androideabi-uber-5.x
