@@ -218,7 +218,7 @@ service fingerprintd /system/bin/fingerprintd
     class late_start
     user system
     group system
-    writepid /dev/cpuset/system-background/tasks
+    writepid /dev/cpuset/foreground/boost/tasks
 
 service qfp-daemon /system/bin/qfp-daemon
     class late_start
