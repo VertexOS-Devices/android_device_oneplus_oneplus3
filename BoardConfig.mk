@@ -55,8 +55,8 @@ TARGET_USES_INTERACTION_BOOST := true
 #TARGET_ROM_CUSTOM_TOOLCHAIN_AARCH64 := aarch64-linux-android-uber-5.x
 
 # Custom Kernel Toolchains
-#TARGET_KERNEL_CUSTOM_TOOLCHAIN := aarch64-linux-android-linaro-6.x-kernel
-#KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/aarch64/$(TARGET_KERNEL_CUSTOM_TOOLCHAIN)/bin
+TARGET_KERNEL_CUSTOM_TOOLCHAIN := aarch64-linux-android-linaro-6.x-kernel
+KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/aarch64/$(TARGET_KERNEL_CUSTOM_TOOLCHAIN)/bin
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := msm8996
