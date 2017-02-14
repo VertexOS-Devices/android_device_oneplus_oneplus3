@@ -197,10 +197,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fs_config_files
 
-# Gallery
-PRODUCT_PACKAGES += \
-	SnapdragonGallery
-
 # GPS
 PRODUCT_PACKAGES += \
     gps.msm8996 \
