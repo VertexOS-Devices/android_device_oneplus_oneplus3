@@ -46,6 +46,10 @@ endif
 # EAS
 ENABLE_SCHEDBOOST := true
 
+# Power HAL
+TARGET_POWERHAL_VARIANT := oneplus3
+TARGET_USES_INTERACTION_BOOST := true
+
 # Custom ROM Toolchains
 #TARGET_ROM_CUSTOM_TOOLCHAIN_ARM := arm-linux-androideabi-uber-5.x
 #TARGET_ROM_CUSTOM_TOOLCHAIN_AARCH64 := aarch64-linux-android-uber-5.x
