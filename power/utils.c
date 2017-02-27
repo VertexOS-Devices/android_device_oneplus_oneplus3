@@ -214,6 +214,8 @@ void interaction(int duration, int num_args, int opt_list[])
             lock_handle = perf_lock_acq(lock_handle, duration, opt_list, num_args);
             if (lock_handle == -1)
                 ALOGE("Failed to acquire lock.");
+            else
+                ALOGI("Lock successfully acquired.");
         }
     }
 #endif

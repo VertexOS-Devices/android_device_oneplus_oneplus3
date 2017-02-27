@@ -288,6 +288,7 @@ int power_hint_override(struct power_module *module, power_hint_t hint, void *da
             break;
         case POWER_HINT_LAUNCH:
             ret_val = process_activity_launch_hint(data);
+            ALOGI("POWER_HINT_LAUNCH activated.");
             break;
         default:
             break;
