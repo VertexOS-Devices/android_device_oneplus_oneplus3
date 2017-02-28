@@ -452,7 +452,7 @@ static void power_hint(struct power_module *module, power_hint_t hint,
             if (is_eas_governor(governor)) {
                 // Setting the value of foreground schedtune boost to 50 and
                 // scaling_min_freq to 1100MHz.
-                int eas_interaction_resources[] = { MIN_FREQ_BIG_CORE_0, 1100, 
+                int eas_interaction_resources[] = { //MIN_FREQ_BIG_CORE_0, 1100, 
                                                     MIN_FREQ_LITTLE_CORE_0, 1100, 
                                                     STOR_CLK_SCALE_DIS, 0x32, 
                                                     CPUBW_HWMON_MIN_FREQ, 0x33};
