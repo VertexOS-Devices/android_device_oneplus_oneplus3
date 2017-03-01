@@ -457,6 +457,7 @@ static void power_hint(struct power_module *module, power_hint_t hint,
                                                     STOR_CLK_SCALE_DIS, 0x32, 
                                                     CPUBW_HWMON_MIN_FREQ, 0x33};
                 interaction(duration, sizeof(eas_interaction_resources)/sizeof(eas_interaction_resources[0]), eas_interaction_resources);
+                ALOGI("POWER_HINT_INTERACTION occurred.");
             } else { // Scheduler is HMP.
                 int hmp_interaction_resources[] = { CPUBW_HWMON_MIN_FREQ, 0x33, 
                                                     MIN_FREQ_BIG_CORE_0, 1000, 
