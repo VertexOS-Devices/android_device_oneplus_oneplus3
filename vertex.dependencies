@@ -28,10 +28,5 @@
     "repository": "VertexOS-Devices/proprietary_vendor_oneplus",
     "target_path": "vendor/oneplus",
     "branch": "7.1.1"
-  },
-  {
-    "repository": "TheMuppets/proprietary_vendor_qcom_binaries",
-    "target_path": "vendor/qcom/binaries",
-    "branch": "cm-14.1"
   }
 ]
