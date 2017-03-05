@@ -426,13 +426,17 @@ static void power_hint(struct power_module *module, power_hint_t hint,
             pthread_mutex_unlock(&s_interaction_lock);
 
 
-            int duration = 1500; // 1.5s by default
+            int duration = 750; // 0.75s by default
             if (data) {
-                int input_duration = *((int*)data) + 750;
+                int input_duration = *((int*)data) + 250;
                 if (input_duration > duration) {
-                    duration = (input_duration > 5750) ? 5750 : input_duration;
+                    duration = (input_duration > 3500) ? 3500 : input_duration;
                 }
             }
+
+            // Only log non-default boost values
+            if (duration != 750)
+                ALOGI("Interaction boost duration: %d", duration);
 
             struct timespec cur_boost_timespec;
             clock_gettime(CLOCK_MONOTONIC, &cur_boost_timespec);
@@ -447,10 +451,6 @@ static void power_hint(struct power_module *module, power_hint_t hint,
             s_previous_boost_timespec = cur_boost_timespec;
             s_previous_duration = duration;
             pthread_mutex_unlock(&s_interaction_lock);
-
-            // Only log boosts greater than the default value
-            if (duration > 1500)
-                ALOGI("Interaction boost duration: %d", duration);
 
             // Scheduler is EAS.
             if (is_eas_governor(governor)) {
