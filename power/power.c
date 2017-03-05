@@ -448,6 +448,8 @@ static void power_hint(struct power_module *module, power_hint_t hint,
             s_previous_duration = duration;
             pthread_mutex_unlock(&s_interaction_lock);
 
+            ALOGI("Boost duration: %d", duration);
+
             // Scheduler is EAS.
             if (is_eas_governor(governor)) {
                 // Setting the value of foreground schedtune boost to 50 and
