@@ -3,7 +3,7 @@ LOCAL_PATH := $(call my-dir)
 # Google Camera
 include $(CLEAR_VARS)
 LOCAL_MODULE := GoogleCamera
-LOCAL_SRC_FILES := apks/$(LOCAL_MODULE)_4.3.016.apk
+LOCAL_SRC_FILES := apks/$(LOCAL_MODULE).apk
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
 LOCAL_CERTIFICATE := PRESIGNED
