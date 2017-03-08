@@ -1,8 +1,8 @@
 LOCAL_PATH := $(call my-dir)
 
-# Google Camera
+# OnePlus Camera
 include $(CLEAR_VARS)
-LOCAL_MODULE := GoogleCamera
+LOCAL_MODULE := OnePlusCamera
 LOCAL_SRC_FILES := apks/$(LOCAL_MODULE).apk
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
