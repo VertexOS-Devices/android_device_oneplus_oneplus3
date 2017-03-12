@@ -265,7 +265,7 @@ PRODUCT_COPY_FILES += \
 
 # Pocketmode
 PRODUCT_PACKAGES += \
-    #OneplusPocketMode
+    OneplusPocketMode
 
 # OMX
 PRODUCT_PACKAGES += \
