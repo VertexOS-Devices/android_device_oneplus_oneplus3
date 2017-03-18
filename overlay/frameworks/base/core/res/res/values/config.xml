@@ -452,4 +452,10 @@
     <!-- cpu boost for PanelView fling -->
     <bool name="config_enableCpuBoostForPanelViewFling">false</bool>
     <integer-array name="panelview_flingboost_param_value" />
+
+    <!-- FP Unlock Boost via Power HAL 
+         Duration in microseconds-->
+    <bool name="config_enableFPUnlockBoost">true</bool>
+    <integer name="config_fpUnlockBoostDuration">1000000</integer>
+
 </resources>
