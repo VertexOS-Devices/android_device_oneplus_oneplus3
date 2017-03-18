@@ -294,7 +294,7 @@ int power_hint_override(struct power_module *module, power_hint_t hint, void *da
             ret_val = process_video_encode_hint(data);
             break;
         case POWER_HINT_LAUNCH:
-            ret_val = process_activity_launch_hint(data);
+            //ret_val = process_activity_launch_hint(data);
             break;
         default:
             break;
