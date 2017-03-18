@@ -426,16 +426,16 @@ static void power_hint(struct power_module *module, power_hint_t hint,
             pthread_mutex_unlock(&s_interaction_lock);
 
 
-            int duration = 750; // 0.75s by default
+            int duration = 500; // 0.500s by default
             if (data) {
-                int input_duration = *((int*)data) + 250;
+                int input_duration = *((int*)data) + 150;
                 if (input_duration > duration) {
                     duration = (input_duration > 3500) ? 3500 : input_duration;
                 }
             }
 
             // Only log non-default boost values
-            if (duration != 750)
+            if (duration != 500)
                 ALOGI("Interaction boost duration: %d", duration);
 
             struct timespec cur_boost_timespec;
@@ -456,8 +456,8 @@ static void power_hint(struct power_module *module, power_hint_t hint,
             if (is_eas_governor(governor)) {
                 // Setting the value of foreground schedtune boost to 50 (nope please don't do this)
                 // scaling_min_freq to 1100MHz.
-                int eas_interaction_resources[] = { MIN_FREQ_BIG_CORE_0, 1100, 
-                                                    MIN_FREQ_LITTLE_CORE_0, 1100, 
+                int eas_interaction_resources[] = { MIN_FREQ_BIG_CORE_0, 1036, 
+                                                    MIN_FREQ_LITTLE_CORE_0, 1036, 
                                                     //STOR_CLK_SCALE_DIS, 0x32, 
                                                     CPUBW_HWMON_MIN_FREQ, 0x33};
                 interaction(duration, sizeof(eas_interaction_resources)/sizeof(eas_interaction_resources[0]), eas_interaction_resources);
