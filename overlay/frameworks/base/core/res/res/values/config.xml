@@ -464,4 +464,26 @@
     <!-- cpu boost for PanelView fling -->
     <bool name="config_enableCpuBoostForPanelViewFling">false</bool>
     <integer-array name="panelview_flingboost_param_value" />
+
+    <!-- Whether FP unlock Boost is enabled
+         Depends on Keypress Boost -->
+    <bool name="config_enableFPUnlockBoost">true</bool>
+    <integer name="fpunlockboost_duration">1200</integer>
+
+    <!-- Boost parameters which get passed to QPerformance -->
+    <integer-array name="boost_strong_param_value">
+        <item>0x40C00000</item> <!-- SCHEDBOOST resource opcode-->
+        <item>0x1</item>        <!-- SCHEDBOOST resource value-->
+        <item>0x40804000</item> <!-- CPUBOOST_MAX_FREQ BIG Core resource opcode-->
+        <item>0xFFF</item>     <!-- CPUBOOST MAX_FREQ resource value-->
+        <item>0x40804100</item> <!-- CPUBOOST_MAX_FREQ LITTLE Core resource opcode-->
+        <item>0xFFF</item>     <!-- CPUBOOST MAX_FREQ resource value-->
+        <item>0x40800000</item> <!-- CPUBOOST_MIN_FREQ BIG Core resource opcode-->
+        <item>0xFFF</item>     <!-- CPUBOOST MIN_FREQ resource value-->
+        <item>0x40800100</item> <!-- CPUBOOST_MIN_FREQ LITTLE Core resource opcode-->
+        <item>0xFFF</item>     <!-- CPUBOOST MIN_FREQ resource value-->
+        <item>0x41800000</item> <!-- CPUBW_MIN_FREQ resource opcode-->
+        <item>140</item>       <!-- CPUBW_MIN_FREQ resource value-->
+    </integer-array>
+    <integer-array name="boost_weak_param_value"/>
 </resources>
