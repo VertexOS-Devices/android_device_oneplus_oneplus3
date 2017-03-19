@@ -281,28 +281,6 @@ static int process_activity_launch_hint(void *data)
     return HINT_NONE;
 }
 
-static int process_cpu_boost_hint(void *data)
-{
-    int duration = 1200;
-    if (data != NULL)
-        duration = (int) data;
-
-    ALOGD("CPU BOOST HINT: %s", data ? "ON" : "OFF");
-    if (data && launch_mode == 0) {
-        launch_handle = process_boost(launch_handle, duration / 1000);
-        if (launch_handle > 0) {
-            ALOGI("CPU boost hint handled.");
-            return HINT_HANDLED;
-        } else {
-            return HINT_NONE;
-        }
-    } else if (data == NULL) {
-        release_request(launch_handle);
-        return HINT_HANDLED;
-    }
-    return HINT_NONE;
-}
-
 int power_hint_override(struct power_module *module, power_hint_t hint, void *data)
 {
     int ret_val = HINT_NONE;
@@ -312,8 +290,6 @@ int power_hint_override(struct power_module *module, power_hint_t hint, void *da
             ret_val = process_cam_preview_hint(data);
             break;
 #endif
-        case POWER_HINT_CPU_BOOST:
-            ret_val = process_cpu_boost_hint(data);
         case POWER_HINT_VIDEO_ENCODE:
             ret_val = process_video_encode_hint(data);
             break;
