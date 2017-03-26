@@ -1,2 +1,5 @@
-type ifaadaemon_service,          service_manager_type;
+#type ifaadaemon_service,          service_manager_type;
 type remosaic_service, service_manager_type;
+
+##### OOS Changes #####
+type ifaadaemon_service, app_api_service, system_server_service, service_manager_type;
