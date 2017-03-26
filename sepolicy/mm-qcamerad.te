@@ -5,3 +5,6 @@ get_prop(mm-qcamerad, diag_prop);
 
 allow mm-qcamerad remosaic_service:service_manager find;
 binder_call(mm-qcamerad, remosaic_daemon);
+
+##### OOS Changes #####
+allow mm-qcamerad perfd:unix_stream_socket { connectto };
