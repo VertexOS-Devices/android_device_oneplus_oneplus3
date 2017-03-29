@@ -435,8 +435,8 @@ static void power_hint(struct power_module *module, power_hint_t hint,
             }
 
             // Only log non-default boost values
-            if (duration != 500)
-                ALOGI("Interaction boost duration: %d", duration);
+            //if (duration != 500)
+            //    ALOGI("Interaction boost duration: %d", duration);
 
             struct timespec cur_boost_timespec;
             clock_gettime(CLOCK_MONOTONIC, &cur_boost_timespec);
