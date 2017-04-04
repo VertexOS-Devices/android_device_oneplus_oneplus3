@@ -177,8 +177,8 @@ PRODUCT_PACKAGES += \
     libtinyxml
 
 # Doze mode
-#PRODUCT_PACKAGES += \
-#    OneplusDoze
+PRODUCT_PACKAGES += \
+    OneplusDoze
 
 # Display calibration
 PRODUCT_PACKAGES += \
