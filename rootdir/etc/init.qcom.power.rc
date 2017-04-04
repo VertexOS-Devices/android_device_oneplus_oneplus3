@@ -1,37 +1,3 @@
-on init
-# Create energy-aware scheduler tuning nodes (Clamping)
-    mkdir /dev/cpuctl
-    mount cgroup none /dev/cpuctl cpu
-    chown system system /dev/cpuctl
-    chown system system /dev/cpuctl/tasks
-    chmod 0666 /dev/cpuctl/tasks
-    write /dev/cpuctl/cpu.rt_period_us 1000000
-    write /dev/cpuctl/cpu.rt_runtime_us 950000
-    mkdir /dev/cpuctl/background
-    chown system system /dev/cpuctl/background
-    chown system system /dev/cpuctl/background/tasks
-    chmod 0666 /dev/cpuctl/background/tasks
-    write /dev/cpuctl/background/cpu.rt_period_us 1000000
-    write /dev/cpuctl/background/cpu.rt_runtime_us 10000
-    mkdir /dev/cpuctl/system-background
-    chown system system /dev/cpuctl/system-background
-    chown system system /dev/cpuctl/system-background/tasks
-    chmod 0666 /dev/cpuctl/system-background/tasks
-    write /dev/cpuctl/system-background/cpu.rt_period_us 1000000
-    write /dev/cpuctl/system-background/cpu.rt_runtime_us 950000
-    mkdir /dev/cpuctl/foreground
-    chown system system /dev/cpuctl/foreground
-    chown system system /dev/cpuctl/foreground/tasks
-    chmod 0666 /dev/cpuctl/foreground/tasks
-    write /dev/cpuctl/foreground/cpu.rt_period_us 1000000
-    write /dev/cpuctl/foreground/cpu.rt_runtime_us 950000
-    mkdir /dev/cpuctl/top-app
-    chown system system /dev/cpuctl/top-app
-    chown system system /dev/cpuctl/top-app/tasks
-    chmod 0666 /dev/cpuctl/top-app/tasks
-    write /dev/cpuctl/top-app/cpu.rt_period_us 1000000
-    write /dev/cpuctl/top-app/cpu.rt_runtime_us 950000
-
 on boot
     # Update foreground and background cpusets
     write /dev/cpuset/foreground/cpus 0-3
