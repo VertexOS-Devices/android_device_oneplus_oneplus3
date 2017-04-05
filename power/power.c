@@ -456,22 +456,12 @@ static void power_hint(struct power_module *module, power_hint_t hint,
 
             // Scheduler is EAS.
             if (is_eas_governor(governor)) {
-                // Scrolls/flings
-                if (isFling) {
-                    int eas_interaction_resources[] = { MIN_FREQ_BIG_CORE_0, 1113, 
-                                                        MIN_FREQ_LITTLE_CORE_0, 1113, 
-                                                        STOR_CLK_SCALE_DIS, 0x0A, // For changing top-app boost to 10
-                                                        CPUBW_HWMON_MIN_FREQ, 0x33};
-                    interaction(duration, sizeof(eas_interaction_resources)/sizeof(eas_interaction_resources[0]), eas_interaction_resources);
-                }
-                // Taps
-                else {
                     int eas_interaction_resources[] = { MIN_FREQ_BIG_CORE_0, 729, 
                                                         MIN_FREQ_LITTLE_CORE_0, 729, 
                                                         //STOR_CLK_SCALE_DIS, 0x32, // For changing top-app boost to 50
+                                                        STOR_CLK_SCALE_DIS, 0x14, // For changing top-app boost to 20
                                                         CPUBW_HWMON_MIN_FREQ, 0x33};
                     interaction(duration, sizeof(eas_interaction_resources)/sizeof(eas_interaction_resources[0]), eas_interaction_resources);
-                }
             } else { // Scheduler is HMP.
                 int hmp_interaction_resources[] = { CPUBW_HWMON_MIN_FREQ, 0x33, 
                                                     MIN_FREQ_BIG_CORE_0, 1000, 
