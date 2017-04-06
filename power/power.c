@@ -466,9 +466,9 @@ static void power_hint(struct power_module *module, power_hint_t hint,
                 }
                 // Taps
                 else {
-                    int eas_interaction_resources[] = { MIN_FREQ_BIG_CORE_0, 729, 
-                                                        MIN_FREQ_LITTLE_CORE_0, 729, 
-                                                        //STOR_CLK_SCALE_DIS, 0x32, // For changing top-app boost to 50
+                    int eas_interaction_resources[] = { MIN_FREQ_BIG_CORE_0, 960, 
+                                                        MIN_FREQ_LITTLE_CORE_0, 960, 
+                                                        STOR_CLK_SCALE_DIS, 0x0A, // For changing top-app boost to 10
                                                         CPUBW_HWMON_MIN_FREQ, 0x33};
                     interaction(duration, sizeof(eas_interaction_resources)/sizeof(eas_interaction_resources[0]), eas_interaction_resources);
                 }
