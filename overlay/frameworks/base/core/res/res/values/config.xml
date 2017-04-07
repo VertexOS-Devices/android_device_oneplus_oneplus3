@@ -452,4 +452,7 @@
     <!-- cpu boost for PanelView fling -->
     <bool name="config_enableCpuBoostForPanelViewFling">false</bool>
     <integer-array name="panelview_flingboost_param_value" />
+
+    <!-- Remove Fingerprint Client on cancel -->
+    <bool name="config_fingerprintRemoveClientOnCancel">true</bool>
 </resources>
