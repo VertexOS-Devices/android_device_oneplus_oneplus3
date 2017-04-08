@@ -43,9 +43,6 @@ ifneq ($(HOST_OS),darwin)
     SDCLANG_LTO_DEFS := device/qcom/common/sdllvm-lto-defs.mk
 endif
 
-# EAS
-ENABLE_SCHEDBOOST := true
-
 # Power HAL
 TARGET_POWERHAL_VARIANT := oneplus3
 TARGET_USES_INTERACTION_BOOST := true
