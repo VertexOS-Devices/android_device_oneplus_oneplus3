@@ -1,1 +1,2 @@
 libopbaselib.so
+libqti_performance.so
