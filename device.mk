@@ -155,6 +155,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/iot_devlist.conf:system/etc/bluetooth/iot_devlist.conf
 
+# Bootanimation
+PRODUCT_COPY_FILES += \
+    device/oneplus/oneplus3/extras/bootanimation/bootanimation.zip:system/media/bootanimation.zip
+
 # Camera
 PRODUCT_PACKAGES += \
 
