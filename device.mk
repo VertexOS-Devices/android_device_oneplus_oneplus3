@@ -165,12 +165,6 @@ PRODUCT_PACKAGES += \
 	OnePlusCameraService \
     libcamera_shim
 
-# Connectivity Engine support (CNE)
-PRODUCT_PACKAGES += \
-    cneapiclient \
-    com.quicinc.cne \
-    services-ext
-
 # Display
 PRODUCT_PACKAGES += \
     copybit.msm8996 \
