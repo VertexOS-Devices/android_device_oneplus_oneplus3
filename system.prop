@@ -42,6 +42,7 @@ qcom.bluetooth.soc=rome
 persist.camera.imglib.fddsp=1
 persist.camera.llc=1
 persist.camera.llnoise=1
+persist.camera.hal.debug=0
 
 # Google DNS
 net.rmnet0.dns1=8.8.8.8
