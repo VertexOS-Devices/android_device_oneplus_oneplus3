@@ -425,17 +425,30 @@ static void power_hint(struct power_module *module, power_hint_t hint,
             }
             pthread_mutex_unlock(&s_interaction_lock);
 
-            // Default boost duration for taps
-            int min_duration = 200; // 0.200s by default
-            int duration = min_duration;
+            // Check if interaction_boost is enabled
+            if (!get_int(ENABLE_INTERACTION_BOOST_PATH, 1))
+                break;
+
+            int fling_min_boost_duration = get_int(FLING_MIN_BOOST_DURATION_PATH, 200);
+            int fling_max_boost_duration = get_int(FLING_MAX_BOOST_DURATION_PATH, 2500);
+            int fling_boost_topapp = get_int(FLING_BOOST_TOPAPP_PATH, 10);
+            int fling_min_freq_big = get_int(FLING_MIN_FREQ_BIG_PATH, 1113);
+            int fling_min_freq_little = get_int(FLING_MIN_FREQ_LITTLE_PATH, 1113);
+            int touch_boost_duration = get_int(TOUCH_BOOST_DURATION_PATH, 200);
+            int touch_boost_topapp = get_int(TOUCH_BOOST_TOPAPP_PATH, 5);
+            int touch_min_freq_big = get_int(TOUCH_MIN_FREQ_BIG_PATH, 1036);
+            int touch_min_freq_little = get_int(TOUCH_MIN_FREQ_LITTLE_PATH, 1036);
+
+            // Default boost duration is equal to touch boost duration
+            int duration = touch_boost_duration;
             bool isFling = false;
 
             // Boost duration for scrolls/flings
-            // Minimum boost duration for flings is equal to the minimum duration for taps
+            // Fling boost duration should be a value between touch boost duration and maximum specified fling boost duration
             if (data) {
-                int input_duration = *((int*)data) + 200;
-                if (input_duration > min_duration) {
-                    duration = (input_duration > 2500) ? 2500 : input_duration;
+                int input_duration = *((int*)data) + fling_min_boost_duration;
+                if (input_duration > touch_boost_duration) {
+                    duration = (input_duration > fling_max_boost_duration) ? fling_max_boost_duration : input_duration;
                 }
                 isFling = true;
             }
@@ -458,17 +471,17 @@ static void power_hint(struct power_module *module, power_hint_t hint,
             if (is_eas_governor(governor)) {
                 // Scrolls/flings
                 if (isFling) {
-                    int eas_interaction_resources[] = { MIN_FREQ_BIG_CORE_0, 1113, 
-                                                        MIN_FREQ_LITTLE_CORE_0, 1113, 
-                                                        STOR_CLK_SCALE_DIS, 0x0A, // For changing top-app boost to 10
+                    int eas_interaction_resources[] = { MIN_FREQ_BIG_CORE_0, fling_min_freq_big, 
+                                                        MIN_FREQ_LITTLE_CORE_0, fling_min_freq_little, 
+                                                        STOR_CLK_SCALE_DIS, fling_boost_topapp, // For changing top-app boost
                                                         CPUBW_HWMON_MIN_FREQ, 0x33};
                     interaction(duration, sizeof(eas_interaction_resources)/sizeof(eas_interaction_resources[0]), eas_interaction_resources);
                 }
                 // Taps
                 else {
-                    int eas_interaction_resources[] = { MIN_FREQ_BIG_CORE_0, 1036, 
-                                                        MIN_FREQ_LITTLE_CORE_0, 1036, 
-                                                        STOR_CLK_SCALE_DIS, 0x05, // For changing top-app boost to 5
+                    int eas_interaction_resources[] = { MIN_FREQ_BIG_CORE_0, touch_min_freq_big, 
+                                                        MIN_FREQ_LITTLE_CORE_0, touch_min_freq_little, 
+                                                        STOR_CLK_SCALE_DIS, touch_boost_topapp, // For changing top-app boost
                                                         CPUBW_HWMON_MIN_FREQ, 0x33};
                     interaction(duration, sizeof(eas_interaction_resources)/sizeof(eas_interaction_resources[0]), eas_interaction_resources);
                 }
