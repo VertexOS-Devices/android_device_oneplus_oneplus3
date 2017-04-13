@@ -4,8 +4,8 @@
 #include "power-common.h"
 
 const char * eas_governors[] = {
-    SCHED_GOVERNOR,
     SCHEDUTIL_GOVERNOR,
+    SCHED_GOVERNOR,
     NULL
 };
 
