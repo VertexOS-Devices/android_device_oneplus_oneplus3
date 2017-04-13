@@ -37,8 +37,11 @@
 #define ONDEMAND_GOVERNOR "ondemand"
 #define INTERACTIVE_GOVERNOR "interactive"
 #define MSMDCVS_GOVERNOR "msm-dcvs"
+#define ALUCARDSCHED_GOVERNOR "alucardsched"
+#define DARKNESSSCHED_GOVERNOR "darknesssched"
 #define SCHED_GOVERNOR "sched"
 #define SCHEDUTIL_GOVERNOR "schedutil"
+#define PWRUTIL_GOVERNOR "pwrutil"
 
 #define HINT_HANDLED (0)
 #define HINT_NONE (-1)

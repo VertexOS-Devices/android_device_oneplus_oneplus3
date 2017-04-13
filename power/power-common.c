@@ -6,6 +6,9 @@
 const char * eas_governors[] = {
     SCHEDUTIL_GOVERNOR,
     SCHED_GOVERNOR,
+    PWRUTIL_GOVERNOR,
+    ALUCARDSCHED_GOVERNOR,
+    DARKNESSSCHED_GOVERNOR,
     NULL
 };
 
