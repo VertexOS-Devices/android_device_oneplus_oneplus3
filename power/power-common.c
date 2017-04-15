@@ -1,8 +1,8 @@
-#include <errno.h>
+//#include <errno.h>
 #include <stddef.h>
 #include <string.h>
 #include <stdlib.h>
-#include <utils/Log.h>
+//#include <utils/Log.h>
 #include "power-common.h"
 
 const char * eas_governors[] = {
@@ -26,7 +26,7 @@ int get_int(const char* file_path, int fallback_value) {
 	FILE *file;
 	file = fopen(file_path, "r");
 	if (file == NULL) {
-		ALOGE("%s: failed to open: %s", __func__, strerror(errno));
+		//ALOGE("%s: failed to open: %s", __func__, strerror(errno));
 		return fallback_value;
 	}
 	int value;
