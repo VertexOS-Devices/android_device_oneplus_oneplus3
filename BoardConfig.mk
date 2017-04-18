@@ -44,7 +44,7 @@ ifneq ($(HOST_OS),darwin)
 endif
 
 # Power HAL
-TARGET_POWERHAL_VARIANT := oneplus3
+TARGET_POWERHAL_VARIANT := voxpopuli
 TARGET_USES_INTERACTION_BOOST := true
 
 # Custom ROM Toolchains
@@ -223,6 +223,7 @@ TARGET_USERIMAGES_USE_F2FS := true
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
+-include device/voxpopuli/sepolicy/sepolicy.mk
 
 BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy
 
