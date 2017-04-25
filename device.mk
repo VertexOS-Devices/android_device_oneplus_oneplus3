@@ -151,7 +151,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     external/ant-wireless/antradio-library/com.dsi.ant.antradio_library.xml:system/etc/permissions/com.dsi.ant.antradio_library.xml
 
-# Bootanimation by @niwia
+# Bluetooth
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/iot_devlist.conf:system/etc/bluetooth/iot_devlist.conf
+
+# Bootanimation
 PRODUCT_COPY_FILES += \
 	device/oneplus/oneplus3/extras/bootanimation/bootanimation.zip:system/media/bootanimation.zip	
 
