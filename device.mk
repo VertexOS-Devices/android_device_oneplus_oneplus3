@@ -264,8 +264,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/public.libraries.txt:system/vendor/etc/public.libraries.txt
 
 # Pocketmode
-#PRODUCT_PACKAGES += \
-#    OneplusPocketMode
+PRODUCT_PACKAGES += \
+    OneplusPocketMode
 
 # OMX
 PRODUCT_PACKAGES += \
