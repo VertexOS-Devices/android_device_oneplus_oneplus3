@@ -163,7 +163,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
 	OnePlusCamera \
 	OnePlusCameraService \
-    libcamera_shim
+    libcamera_shim \
+	Snap
 
 # Connectivity Engine support (CNE)
 PRODUCT_PACKAGES += \
