@@ -176,7 +176,7 @@ on enable-low-power
     # Starting io prefetcher service
     start iop
 
-    setprop sys.io.scheduler cfq
+    setprop sys.io.scheduler bfq
 
     # update cpusets now that boot is complete and we want better load balancing
     write /dev/cpuset/top-app/cpus 0-3
