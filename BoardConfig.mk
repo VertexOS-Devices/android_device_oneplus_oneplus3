@@ -46,6 +46,8 @@ endif
 # Power HAL
 TARGET_POWERHAL_VARIANT := voxpopuli
 TARGET_USES_INTERACTION_BOOST := true
+TARGET_HIGH_BRIGHTNESS_MODE_NODE := "/sys/devices/virtual/graphics/fb0/hbm"
+POWER_FEATURE_HIGH_BRIGHTNESS_MODE := 50
 
 # Custom ROM Toolchains
 #TARGET_ROM_CUSTOM_TOOLCHAIN_ARM := arm-linux-androideabi-uber-5.x
