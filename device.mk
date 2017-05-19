@@ -175,8 +175,8 @@ PRODUCT_PACKAGES += \
     libtinyxml
 
 # Doze mode
-PRODUCT_PACKAGES += \
-    OneplusDoze
+#PRODUCT_PACKAGES += \
+#    OneplusDoze
 
 # Display calibration
 PRODUCT_PACKAGES += \
@@ -258,8 +258,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/nfc/libnfc-nxp.conf:system/etc/libnfc-nxp.conf
 
 # Pocketmode
-PRODUCT_PACKAGES += \
-    OneplusPocketMode
+#PRODUCT_PACKAGES += \
+#    OneplusPocketMode
 
 # OMX
 PRODUCT_PACKAGES += \
