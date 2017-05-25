@@ -163,7 +163,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
 	OnePlusCamera \
 	OnePlusCameraService \
-    libcamera_shim
 
 # Display
 PRODUCT_PACKAGES += \
