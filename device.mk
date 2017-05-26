@@ -328,5 +328,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini
 
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/rootdir/etc/public.libraries.txt:system/vendor/etc/public.libraries.txt
+
 # Inherit from oppo-common
 $(call inherit-product, device/oppo/common/common.mk)
