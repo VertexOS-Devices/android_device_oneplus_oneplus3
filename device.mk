@@ -161,8 +161,10 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += \
+	camera.msm8996 \
 	OnePlusCamera \
 	OnePlusCameraService \
+    libcamera_shim \
 
 # Display
 PRODUCT_PACKAGES += \

@@ -27,3 +27,40 @@ LOCAL_MODULE := libcamera_parameters_ext
 LOCAL_MODULE_TAGS := optional
 
 include $(BUILD_STATIC_LIBRARY)
+
+include $(CLEAR_VARS)
+
+LOCAL_SRC_FILES := camera_shim.cpp
+LOCAL_MODULE := libcamera_shim
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_32_BIT_ONLY := true
+
+include $(BUILD_SHARED_LIBRARY)
+
+include $(CLEAR_VARS)
+
+LOCAL_SRC_FILES := \
+    CameraWrapper.cpp \
+    Camera2Wrapper.cpp \
+    Camera3Wrapper.cpp
+
+LOCAL_SHARED_LIBRARIES := \
+    libhardware \
+    liblog \
+    libcamera_client \
+    libutils \
+    libcutils
+
+LOCAL_C_INCLUDES += \
+    system/core/include \
+    system/media/camera/include \
+    frameworks/av/include
+
+LOCAL_32_BIT_ONLY := true
+LOCAL_MODULE_RELATIVE_PATH := hw
+
+LOCAL_MODULE := camera.$(TARGET_BOARD_PLATFORM)
+LOCAL_MODULE_TAGS := optional
+
+include $(BUILD_SHARED_LIBRARY)
