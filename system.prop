@@ -40,7 +40,6 @@ qcom.bluetooth.soc=rome
 
 # Camera
 persist.camera.hal.debug=0
-camera.hal1.packagelist=com.oneplus.camera
 
 # Google DNS
 net.rmnet0.dns1=8.8.8.8
