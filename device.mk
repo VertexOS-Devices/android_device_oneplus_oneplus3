@@ -271,6 +271,12 @@ PRODUCT_PACKAGES += \
     libOmxVenc \
     libstagefrighthw
 
+# OTA
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.ota.romname=VertexOS-OnePlus3 \
+    ro.ota.version=$(shell date +"%Y%m%d") \
+    ro.ota.manifest=https://raw.githubusercontent.com/VertexOS/android_extras_vertexota/n/vertex_oneplus3.xml
+
 # Power
 PRODUCT_PACKAGES += \
     power.msm8996
