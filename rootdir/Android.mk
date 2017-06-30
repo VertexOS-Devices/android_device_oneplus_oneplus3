@@ -1,5 +1,16 @@
 LOCAL_PATH := $(call my-dir)
 
+# OnePlus Camera
+include $(CLEAR_VARS)
+LOCAL_MODULE := OnePlusCamera
+LOCAL_MODULE_OWNER := oneplus
+LOCAL_SRC_FILES := apks/$(LOCAL_MODULE).apk
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := APPS
+LOCAL_CERTIFICATE := PRESIGNED
+LOCAL_OVERRIDES_PACKAGES := Camera2
+include $(BUILD_PREBUILT)
+
 # Device init scripts
 
 include $(CLEAR_VARS)
