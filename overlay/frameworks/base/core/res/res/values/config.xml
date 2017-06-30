@@ -398,4 +398,7 @@
 
     <!-- Proximity check on screen on default -->
     <bool name="config_proximityCheckOnWakeEnabledByDefault">true</bool>
+
+    <!-- Night Display -->
+    <bool name="config_nightDisplayAvailable">true</bool>
 </resources>
