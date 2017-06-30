@@ -34,4 +34,7 @@
          For example, a device with Home, Back and Menu keys would set this
          config to 7. -->
     <integer name="config_deviceHardwareKeys">83</integer>
+
+    <!-- sRGB sysfs path -->
+    <string name="config_srgb_path">/sys/class/graphics/fb0/srgb</string>
 </resources>
