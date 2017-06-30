@@ -52,6 +52,12 @@ persist.data.mode=concurrent
 # Fingerprint
 persist.qfp=false
 
+# Google DNS
+net.rmnet0.dns1=8.8.8.8
+net.rmnet0.dns2=8.8.4.4
+net.dns1=8.8.8.8
+net.dns2=8.8.4.4
+
 # GPS
 persist.gps.qc_nlp_in_use=1
 persist.loc.nlp_name=com.qualcomm.location
