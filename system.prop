@@ -144,6 +144,3 @@ persist.timed.enable=true
 # Wifi
 wifi.interface=wlan0
 wifi.supplicant_scan_interval=180
-
-# Experimental
-ro.media.enc.vid.fps.max=60
