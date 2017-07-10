@@ -90,7 +90,7 @@ enable_prefetch=1
 persist.mm.enable.prefetch=true
 
 # QCOM
-ro.frp.pst=/dev/block/bootdevice/by-name/config
+#ro.frp.pst=/dev/block/bootdevice/by-name/config
 drm.service.enabled=true
 
 # RIL
