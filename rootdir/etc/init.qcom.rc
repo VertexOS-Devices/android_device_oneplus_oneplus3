@@ -51,6 +51,7 @@ on post-fs
 on late-fs
     # boot time fs tune
     write /sys/block/sda/queue/iostats 0
+    write /sys/block/sda/queue/scheduler cfq
     write /sys/block/sda/queue/iosched/slice_idle 0
     write /sys/block/sda/queue/read_ahead_kb 2048
     write /sys/block/sda/queue/nr_requests 256
