@@ -50,8 +50,14 @@
             android:label="@string/ambient_display_title"
             android:theme="@style/Theme.Main">
             <intent-filter>
-                <category android:name="android.intent.category.EXTRA_SETTINGS" />
+                <action android:name="com.android.settings.action.EXTRA_SETTINGS" />
             </intent-filter>
+            <meta-data
+                android:name="com.android.settings.category"
+                android:value="com.android.settings.category.device" />
+            <meta-data
+                android:name="com.android.settings.icon"
+                android:resource="@drawable/ic_settings_doze" />
         </activity>
 
     </application>
