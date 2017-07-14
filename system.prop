@@ -52,6 +52,9 @@ ro.use_data_netmgrd=true
 persist.data.netmgrd.qos.enable=true
 persist.data.mode=concurrent
 
+# Fastdormancy
+persist.env.fastdorm.enabled=true
+
 # Fingerprint
 persist.qfp=false
 
