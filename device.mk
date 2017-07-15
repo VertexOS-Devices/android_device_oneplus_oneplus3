@@ -188,6 +188,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     OneplusDoze
 
+# File DAC
+PRODUCT_PACKAGES += \
+	fs_config_dirs \
+	fs_config_files
+
 # Fingerprint sensor
 PRODUCT_PACKAGES += \
     fingerprintd \
