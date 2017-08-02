@@ -161,7 +161,8 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    OnePlusCamera
+    OnePlusCamera \
+    libcamera_shim
 
 # Connectivity Engine support (CNE)
 PRODUCT_PACKAGES += \
@@ -319,6 +320,10 @@ PRODUCT_PACKAGES += \
     ueventd.qcom.rc \
     init.spectrum.rc \
     init.spectrum.sh
+
+# Recovery
+PRODUCT_PACKAGES += \
+    librecovery_updater_op3
 
 # RIL
 PRODUCT_PACKAGES += \
