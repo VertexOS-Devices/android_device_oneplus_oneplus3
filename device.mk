@@ -161,7 +161,8 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    OnePlusCamera
+    OnePlusCamera \
+    OnePlusCameraService
 
 # Connectivity Engine support (CNE)
 PRODUCT_PACKAGES += \

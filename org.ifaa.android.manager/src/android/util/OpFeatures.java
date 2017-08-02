@@ -81,6 +81,6 @@ public final class OpFeatures {
     }
     
     public static boolean isBlackModeOn(){
-        return true;
+        return false;
     }
 }
