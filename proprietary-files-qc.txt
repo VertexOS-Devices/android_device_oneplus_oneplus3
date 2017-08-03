@@ -349,7 +349,7 @@ vendor/lib64/libsmemlog.so
 # Radio
 -app/datastatusnotification/datastatusnotification.apk
 -app/embms/embms.apk
-#-app/fastdormancy/fastdormancy.apk
+-app/fastdormancy/fastdormancy.apk
 -app/QtiTelephonyService/QtiTelephonyService.apk
 -app/shutdownlistener/shutdownlistener.apk
 bin/ipacm-diag
