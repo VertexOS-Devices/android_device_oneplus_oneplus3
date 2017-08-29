@@ -16,15 +16,13 @@
      limitations under the License.
 -->
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
-    <style name="Theme.Main" parent="@android:style/Theme.Material.Settings">
-        <item name="preferenceTheme">@android:style/Theme.Material.Settings</item>
+    <style name="Theme.Main" parent="@android:style/Theme.DeviceDefault.Settings">
+        <item name="preferenceTheme">@android:style/Theme.DeviceDefault.Settings</item>
     </style>
 
-    <style name="ThemeOverlay.SwitchBar" parent="@android:style/ThemeOverlay">
-        <item name="android:colorAccent">@color/switch_accent_color</item>
-    </style>
+    <style name="ThemeOverlay.SwitchBar" parent="@*android:style/ThemeOverlay.DeviceDefault" />
 
-    <style name="ThemeOverlay.SwitchBar.Secondary" parent="@android:style/ThemeOverlay">
-        <item name="android:colorAccent">@color/system_secondary_color</item>
+    <style name="ThemeOverlay.SwitchBar.Secondary" parent="@*android:style/ThemeOverlay.DeviceDefault" >
+        <item name="android:colorAccent">@*android:color/secondary_device_default_settings</item>
     </style>
 </resources>
